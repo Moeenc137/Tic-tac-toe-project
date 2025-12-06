@@ -1,10 +1,15 @@
 let btns = document.querySelectorAll(".button");
 let resetbtn = document.querySelector(".reset-btn");
+
 let resetbutton = () => {
   turnO = true;
   enablebox();
   winnerPara.classList.add("hide");
+  btns.forEach((b) => {
+    b.classList.remove("txt-white", "txt-blue");
+  });
 };
+
 let turnO = true;
 
 const winPatterns = [
@@ -22,9 +27,12 @@ btns.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
       box.innerText = "O";
+      box.classList.add("txt-white");
       turnO = false;
     } else {
       box.innerText = "X";
+      box.classList.remove("txt-white");
+      box.classList.add("txt-blue");
       turnO = true;
     }
     box.disabled = true;
@@ -45,7 +53,7 @@ let enablebox = () => {
 };
 
 let winnerPara = document.querySelector(".winner");
-let newBtn = document.querySelector(".new-btn");
+
 let showwinner = (winner) => {
   winnerPara.innerText = `Winner is ${winner}`;
   winnerPara.classList.remove("hide");

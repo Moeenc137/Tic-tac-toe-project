@@ -31,7 +31,6 @@
   border-radius: 1rem;
   border: none;
   background-color: #e9d985;
-  color: #222e50;
   font-size: 40px;
 }
 
@@ -62,4 +61,12 @@
 
 .hide {
   display: none;
+}
+
+.txt-white {
+  color: white;
+}
+
+.txt-blue {
+  color: #222e50;
 }
